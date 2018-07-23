@@ -254,7 +254,7 @@ pb <-pb %>% mutate(quantidade_doadores_s = log(quantidade_doadores),
 
 pb %>% ggplot(aes(x = gastos_log, y = recursos_de_pessoas_juridicas_s)) + geom_point()
 
-modelo_pb = lm(votos_log ~ gastos_log + sexo + idade + quantidade_doadores_s + quantidade_despesas_s + partido + recursos_de_pessoas_juridicas_s, data = pb)
+modelo_pb = lm(votos_log ~ gastos_log + sexo + idade + quantidade_doadores_s + quantidade_despesas_s  + recursos_de_pessoas_juridicas_s, data = pb)
 
 tidy(modelo_pb, conf.int = T)
 glance(modelo_pb)
